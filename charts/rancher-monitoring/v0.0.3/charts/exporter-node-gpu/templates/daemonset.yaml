@@ -54,7 +54,7 @@ spec:
         ports:
         - name: metrics
           containerPort: 9101
-        #   hostPort: 9101
+          hostPort: 9101
         resources:
           requests:
             memory: 30Mi
@@ -81,7 +81,7 @@ spec:
         - name: collector-textfiles
           mountPath: /run/prometheus
 
-      hostNetwork: false
+      hostNetwork: true
       hostPID: true
 
       volumes:
