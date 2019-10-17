@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name:   expose-node-gpu-metrics
+  labels:
+    app: exporter-node-gpu
+spec:
+  type: ClusterIP
+  clusterIP: None
+  selector:
+    app: exporter-node-gpu
+  ports:
+  - name: metrics
+    port: 9101
+    targetPort: 9101
+    protocol: TCP
