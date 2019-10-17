@@ -16,7 +16,8 @@
     "editable": true,
     "gnetId": 6387,
     "graphTooltip": 1,
-    "id": 11,
+    "id": 2,
+    "iteration": 1571305958866,
     "links": [],
     "panels": [
       {
@@ -364,45 +365,6 @@
         }
       },
       {
-        "alert": {
-          "conditions": [
-            {
-              "evaluator": {
-                "params": [
-                  90
-                ],
-                "type": "gt"
-              },
-              "operator": {
-                "type": "and"
-              },
-              "query": {
-                "params": [
-                  "A",
-                  "5m",
-                  "now"
-                ]
-              },
-              "reducer": {
-                "params": [],
-                "type": "avg"
-              },
-              "type": "query"
-            }
-          ],
-          "executionErrorState": "alerting",
-          "for": "0m",
-          "frequency": "5s",
-          "handler": 1,
-          "message": "The GPU temperature is too damn high!",
-          "name": "GPU Temperature alert",
-          "noDataState": "no_data",
-          "notifications": [
-            {
-              "id": 1
-            }
-          ]
-        },
         "aliasColors": {},
         "bars": false,
         "dashLength": 10,
@@ -452,15 +414,7 @@
             "refId": "A"
           }
         ],
-        "thresholds": [
-          {
-            "colorMode": "critical",
-            "fill": true,
-            "line": true,
-            "op": "gt",
-            "value": 90
-          }
-        ],
+        "thresholds": [],
         "timeFrom": null,
         "timeRegions": [],
         "timeShift": null,
@@ -777,7 +731,33 @@
       "infrastructure"
     ],
     "templating": {
-      "list": []
+      "list": [
+        {
+          "allValue": null,
+          "current": {
+            "text": "192.168.50.201:9101",
+            "value": "192.168.50.201:9101"
+          },
+          "datasource": "RANCHER_MONITORING",
+          "definition": "label_values(dcgm_enc_utilization, instance)",
+          "hide": 0,
+          "includeAll": false,
+          "label": "Host:",
+          "multi": false,
+          "name": "instance",
+          "options": [],
+          "query": "label_values(dcgm_enc_utilization, instance)",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 1,
+          "tagValuesQuery": "",
+          "tags": [],
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        }
+      ]
     },
     "time": {
       "from": "now-1h",
@@ -811,5 +791,5 @@
     "timezone": "",
     "title": "Nvidia GPU",
     "uid": "fnvhnzGmk",
-    "version": 1
+    "version": 32
   }
